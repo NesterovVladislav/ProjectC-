@@ -30,7 +30,7 @@ public:
 	}
 	Shape * CreaterPolyline( size_t & iSize ){
 		Polyline * polyline = new Polyline();
-		size_t numberVertexes = 3 + rand() % 5;
+		size_t numberVertexes = 2 + rand() % 5;
 		iSize += numberVertexes;
 		for ( size_t i = 0; i < numberVertexes; ++i ){
 			Point vertex( double( rand() % 100 ), double( rand() % 100 ) );
