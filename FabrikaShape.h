@@ -1,7 +1,6 @@
 #ifndef __FabrikaShape_H_
 #define __FabrikaShape_H_
 
-#include "Container.h"
 #include "Shapes.h"
 
 class Fabrika{
