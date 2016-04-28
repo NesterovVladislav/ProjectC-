@@ -67,7 +67,6 @@ public:
 	}
 	void PushBack( T const & iData ){
 		Node< T > * newTail = new Node< T >( iData );
-		newTail->m_data = iData;
 		if ( m_size == 0 ){
 			m_head = newTail;
 		}
