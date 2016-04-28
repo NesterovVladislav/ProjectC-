@@ -29,7 +29,7 @@ public:
 		return square;
 	}
 	Shape * CreaterPolyline( size_t & iSize ){
-		Shape * polyline = new Polyline();
+		Polyline * polyline = new Polyline();
 		size_t numberVertexes = 2 + rand() % 5;
 		iSize += numberVertexes;
 		for ( size_t i = 0; i < numberVertexes; ++i ){
@@ -39,7 +39,7 @@ public:
 		return polyline;
 	}
 	Shape * CreaterPolygon( size_t & iSize ){
-		Shape * polygon = new Polygon();
+		Polygon * polygon = new Polygon();
 		size_t numberVertexes = 3 + rand() % 5;
 		iSize += numberVertexes;
 		for ( size_t i = 0; i < numberVertexes; ++i ){
