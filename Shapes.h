@@ -62,8 +62,8 @@ public:
 	}
 	friend std::ostream & operator << ( std::ostream & iStream, Circle const & iCircle );
 private:
-	Point  m_centre;
-	double m_radius;
+	Point const  m_centre;
+	double const m_radius;
 	double m_area;
 };
 std::ostream & operator << ( std::ostream & iStream, Circle const & iCircle ) {
@@ -88,8 +88,8 @@ public:
 	}
 	friend std::ostream & operator << ( std::ostream & iStream, Rect const & iRect );
 private:
-	Point m_firstVertex;
-	Point m_secondVertex;
+	Point const m_firstVertex;
+	Point const m_secondVertex;
 	double m_area;
 	double m_perimeter;
 };
@@ -113,8 +113,8 @@ public:
 	}
 	friend std::ostream & operator << ( std::ostream & iStream, Square const & iSquare );
 private:
-	Point m_vertex;
-	double m_lengthSide;
+	Point const m_vertex;
+	double const m_lengthSide;
 	double m_area;
 	double m_perimeter;
 };
