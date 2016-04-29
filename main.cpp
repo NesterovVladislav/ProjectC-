@@ -6,7 +6,7 @@
 void RunAplication(){
 	Container< Shape * > containerShapes;
 	Fabrika shapeCreator;
-	size_t numbeêupportPoints = 0;
+	size_t numbeÃªupportPoints = 0;
 	size_t numberShape = 20 + ( rand() % 6 );
 	for ( size_t i = 0; i < numberShape; ++i ){
 		size_t k = 1 + rand() % 6;
@@ -16,19 +16,19 @@ void RunAplication(){
 			containerShapes.PushFront( shapeCreator.CreaterPoint() );
 			break;
 		case 2:
-			containerShapes.PushFront( shapeCreator.CreatervCircle( numbeêupportPoints ) );
+			containerShapes.PushFront( shapeCreator.CreatervCircle( numbeÃªupportPoints ) );
 			break;
 		case 3:
-			containerShapes.PushFront( shapeCreator.CreaterRect( numbeêupportPoints ) );
+			containerShapes.PushFront( shapeCreator.CreaterRect( numbeÃªupportPoints ) );
 			break;
 		case 4:
-			containerShapes.PushFront( shapeCreator.CreaterSquare( numbeêupportPoints ) );
+			containerShapes.PushFront( shapeCreator.CreaterSquare( numbeÃªupportPoints ) );
 			break;
 		case 5:
-			containerShapes.PushFront( shapeCreator.CreaterPolyline( numbeêupportPoints ) );
+			containerShapes.PushFront( shapeCreator.CreaterPolyline( numbeÃªupportPoints ) );
 			break;
 		case 6:
-			containerShapes.PushFront( shapeCreator.CreaterPolygon( numbeêupportPoints ) );
+			containerShapes.PushFront( shapeCreator.CreaterPolygon( numbeÃªupportPoints ) );
 			break;
 		default:
 			break;
@@ -39,16 +39,22 @@ void RunAplication(){
 			Shape const * shape = *containerShapes.GetElement( i );
 			shape->Print();
 		}
-		catch ( std::invalid_argument & iExcept )
+		catch ( std::invalid_argument & except )
 		{
-			std::cerr << iExcept.what() << std::endl;
+			std::cerr << except.what() << std::endl;
 		}
 	}
-	std::cout << Shape::GetCount() - numbeêupportPoints << '\n';
+	std::cout << Shape::GetCount() - numbeÃªupportPoints << '\n';
 	while ( containerShapes.GetSize() > 0 ){
-		Shape const * shape = *containerShapes.GetHead();
-		delete shape;
-		containerShapes.RemoveFront();
+		try{
+			Shape const * shape = *containerShapes.GetHead();
+			delete shape;
+			containerShapes.RemoveFront();
+		}
+		catch ( std::invalid_argument & except )
+		{
+			std::cerr << except.what() << std::endl;
+		}
 	}
 	std::cout << Shape::GetCount() << '\n';
 }
