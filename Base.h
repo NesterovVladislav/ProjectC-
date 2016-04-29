@@ -6,6 +6,7 @@
 
 class Printable{
 public:
+	virtual ~ Printable(){}
 	virtual void Print() const = 0;
 
 };
